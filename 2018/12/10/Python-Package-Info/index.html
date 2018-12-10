@@ -87,14 +87,14 @@
 <meta property="og:site_name" content="莫道桑榆晚">
 <meta property="og:description" content="介绍如何查看Python包位置">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://sangyuhiter.github.io/2018/12/10/Python-Package-Info/Python-package-scanner/Python-Package-scanner1.png">
-<meta property="og:image" content="https://sangyuhiter.github.io/2018/12/10/Python-Package-Info/Python-package-scanner/Python-Package-scanner2.png">
-<meta property="og:image" content="https://sangyuhiter.github.io/2018/12/10/Python-Package-Info/Python-package-scanner/Python-Package-scanner3.png">
-<meta property="og:updated_time" content="2018-12-10T03:47:54.893Z">
+<meta property="og:image" content="https://sangyuhiter.github.io/2018/12/10/Python-Package-Info/Python-package-Info/Python-Package-scanner1.png">
+<meta property="og:image" content="https://sangyuhiter.github.io/2018/12/10/Python-Package-Info/Python-package-Info/Python-Package-scanner2.png">
+<meta property="og:image" content="https://sangyuhiter.github.io/2018/12/10/Python-Package-Info/Python-package-Info/Python-Package-scanner3.png">
+<meta property="og:updated_time" content="2018-12-10T03:49:40.420Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python包查看器">
 <meta name="twitter:description" content="介绍如何查看Python包位置">
-<meta name="twitter:image" content="https://sangyuhiter.github.io/2018/12/10/Python-Package-Info/Python-package-scanner/Python-Package-scanner1.png">
+<meta name="twitter:image" content="https://sangyuhiter.github.io/2018/12/10/Python-Package-Info/Python-package-Info/Python-Package-scanner1.png">
 
 
 
@@ -399,9 +399,9 @@
 
       
         <p>#Python中查看包位置的方式</p>
-<p>##1、pip show packagename<br>    使用pip show packagename 的方式可以查看包的具体信息，具体使用如下：<br><img src="/2018/12/10/Python-Package-Info/Python-package-scanner/Python-Package-scanner1.png" alt="pip show 方式"></p>
-<p>##2、pip uninstall packagename<br>    使用pip uninstall packagename 的方式可以查看该包所有位置信息，但需要输入n,因为我们不是真的要卸载此包，具体使用如下：<br><img src="/2018/12/10/Python-Package-Info/Python-package-scanner/Python-Package-scanner2.png" alt="pip uninstall 方式"></p>
-<p>###第二种方式可以查询到所有信息，但操作起来比较麻烦，可以使用以下批处理文件，能够有效查询信息：<br>    @echo off<br>    title Python package path scanner By SangYu<br>    set /p Package=输入包名：<br>    echo 正在查询包%Package%<br>    echo n | pip uninstall %Package% | findstr “\“<br>    echo 查询完成，按任意键退出<br>    pause&gt;NUL<br>其中，管道命令的作用是：将n作为输入传给pip uninstall packagename，它的返回结果作为输入传给查询命令，其中”\“为右划线的转义字符，从右往左理解即可。使用如下，复制该段代码，保存到文档中，并修改后缀名为.bat，然后点击即可使用。<br><img src="/2018/12/10/Python-Package-Info/Python-package-scanner/Python-Package-scanner3.png" alt="批处理方式"></p>
+<p>##1、pip show packagename<br>    使用pip show packagename 的方式可以查看包的具体信息，具体使用如下：<br><img src="/2018/12/10/Python-Package-Info/Python-package-Info/Python-Package-scanner1.png" alt="pip show 方式"></p>
+<p>##2、pip uninstall packagename<br>    使用pip uninstall packagename 的方式可以查看该包所有位置信息，但需要输入n,因为我们不是真的要卸载此包，具体使用如下：<br><img src="/2018/12/10/Python-Package-Info/Python-package-Info/Python-Package-scanner2.png" alt="pip uninstall 方式"></p>
+<p>###第二种方式可以查询到所有信息，但操作起来比较麻烦，可以使用以下批处理文件，能够有效查询信息：<br>    @echo off<br>    title Python package path scanner By SangYu<br>    set /p Package=输入包名：<br>    echo 正在查询包%Package%<br>    echo n | pip uninstall %Package% | findstr “\“<br>    echo 查询完成，按任意键退出<br>    pause&gt;NUL<br>其中，管道命令的作用是：将n作为输入传给pip uninstall packagename，它的返回结果作为输入传给查询命令，其中”\“为右划线的转义字符，从右往左理解即可。使用如下，复制该段代码，保存到文档中，并修改后缀名为.bat，然后点击即可使用。<br><img src="/2018/12/10/Python-Package-Info/Python-package-Info/Python-Package-scanner3.png" alt="批处理方式"></p>
 
       
     </div>
@@ -443,10 +443,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/12/10/Python-package-scanner/" rel="prev" title="Python包查看器">
-                Python包查看器 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -527,7 +523,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

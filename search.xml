@@ -2,18 +2,6 @@
 <search>
   <entry>
     <title><![CDATA[Python包查看器]]></title>
-    <url>%2F2018%2F12%2F10%2FPython-package-scanner%2F</url>
-    <content type="text"><![CDATA[#Python中查看包位置的方式 ##1、pip show packagename 使用pip show packagename 的方式可以查看包的具体信息，具体使用如下： ##2、pip uninstall packagename 使用pip uninstall packagename 的方式可以查看该包所有位置信息，但需要输入n,因为我们不是真的要卸载此包，具体使用如下： ###第二种方式可以查询到所有信息，但操作起来比较麻烦，可以使用以下批处理文件，能够有效查询信息： @echo off title Python package path scanner By SangYu set /p Package=输入包名： echo 正在查询包%Package% echo n | pip uninstall %Package% | findstr “\“ echo 查询完成，按任意键退出 pause&gt;NUL其中，管道命令的作用是：将n作为输入传给pip uninstall packagename，它的返回结果作为输入传给查询命令，其中”\“为右划线的转义字符，从右往左理解即可。使用如下，复制该段代码，保存到文档中，并修改后缀名为.bat，然后点击即可使用。]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>bat</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Python包查看器]]></title>
     <url>%2F2018%2F12%2F10%2FPython-Package-Info%2F</url>
     <content type="text"><![CDATA[#Python中查看包位置的方式 ##1、pip show packagename 使用pip show packagename 的方式可以查看包的具体信息，具体使用如下： ##2、pip uninstall packagename 使用pip uninstall packagename 的方式可以查看该包所有位置信息，但需要输入n,因为我们不是真的要卸载此包，具体使用如下： ###第二种方式可以查询到所有信息，但操作起来比较麻烦，可以使用以下批处理文件，能够有效查询信息： @echo off title Python package path scanner By SangYu set /p Package=输入包名： echo 正在查询包%Package% echo n | pip uninstall %Package% | findstr “\“ echo 查询完成，按任意键退出 pause&gt;NUL其中，管道命令的作用是：将n作为输入传给pip uninstall packagename，它的返回结果作为输入传给查询命令，其中”\“为右划线的转义字符，从右往左理解即可。使用如下，复制该段代码，保存到文档中，并修改后缀名为.bat，然后点击即可使用。]]></content>
       <categories>
