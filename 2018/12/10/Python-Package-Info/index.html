@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Python,bat,">
 
 
 
@@ -79,17 +79,22 @@
 
 
 
-<meta name="description" content="北海虽赊扶摇可接，东隅已逝桑榆非晚！">
-<meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="https://sangyuhiter.github.io/categories/index.html">
+<meta name="description" content="介绍如何查看Python包位置">
+<meta name="keywords" content="Python,bat">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python包查看器">
+<meta property="og:url" content="https://sangyuhiter.github.io/2018/12/10/Python-Package-Info/index.html">
 <meta property="og:site_name" content="莫道桑榆晚">
-<meta property="og:description" content="北海虽赊扶摇可接，东隅已逝桑榆非晚！">
+<meta property="og:description" content="介绍如何查看Python包位置">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-10-24T01:35:22.989Z">
+<meta property="og:image" content="https://sangyuhiter.github.io/2018/12/10/Python-Package-Info/Python-package-scanner/Python-Package-scanner1.png">
+<meta property="og:image" content="https://sangyuhiter.github.io/2018/12/10/Python-Package-Info/Python-package-scanner/Python-Package-scanner2.png">
+<meta property="og:image" content="https://sangyuhiter.github.io/2018/12/10/Python-Package-Info/Python-package-scanner/Python-Package-scanner3.png">
+<meta property="og:updated_time" content="2018-12-10T03:47:54.893Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="categories">
-<meta name="twitter:description" content="北海虽赊扶摇可接，东隅已逝桑榆非晚！">
+<meta name="twitter:title" content="Python包查看器">
+<meta name="twitter:description" content="介绍如何查看Python包位置">
+<meta name="twitter:image" content="https://sangyuhiter.github.io/2018/12/10/Python-Package-Info/Python-package-scanner/Python-Package-scanner1.png">
 
 
 
@@ -119,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="https://sangyuhiter.github.io/categories/">
+  <link rel="canonical" href="https://sangyuhiter.github.io/2018/12/10/Python-Package-Info/">
 
 
 
 
 
-  <title>categories | 莫道桑榆晚</title>
+  <title>Python包查看器 | 莫道桑榆晚</title>
   
 
 
@@ -282,40 +287,191 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://sangyuhiter.github.io/2018/12/10/Python-Package-Info/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="SangYu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/header.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="莫道桑榆晚">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">categories</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="category-all-page">
-            <div class="category-all-title">
-                1 category in total
-            </div>
-            <div class="category-all">
-              <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">2</span></li></ul>
-            </div>
-          </div>
+          <h1 class="post-title" itemprop="name headline">Python包查看器</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-10T10:33:00+08:00">
+                2018-12-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+		  
+
+          
+
+          
+              <div class="post-description">
+                  介绍如何查看Python包位置
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <p>#Python中查看包位置的方式</p>
+<p>##1、pip show packagename<br>    使用pip show packagename 的方式可以查看包的具体信息，具体使用如下：<br><img src="/2018/12/10/Python-Package-Info/Python-package-scanner/Python-Package-scanner1.png" alt="pip show 方式"></p>
+<p>##2、pip uninstall packagename<br>    使用pip uninstall packagename 的方式可以查看该包所有位置信息，但需要输入n,因为我们不是真的要卸载此包，具体使用如下：<br><img src="/2018/12/10/Python-Package-Info/Python-package-scanner/Python-Package-scanner2.png" alt="pip uninstall 方式"></p>
+<p>###第二种方式可以查询到所有信息，但操作起来比较麻烦，可以使用以下批处理文件，能够有效查询信息：<br>    @echo off<br>    title Python package path scanner By SangYu<br>    set /p Package=输入包名：<br>    echo 正在查询包%Package%<br>    echo n | pip uninstall %Package% | findstr “\“<br>    echo 查询完成，按任意键退出<br>    pause&gt;NUL<br>其中，管道命令的作用是：将n作为输入传给pip uninstall packagename，它的返回结果作为输入传给查询命令，其中”\“为右划线的转义字符，从右往左理解即可。使用如下，复制该段代码，保存到文档中，并修改后缀名为.bat，然后点击即可使用。<br><img src="/2018/12/10/Python-Package-Info/Python-package-scanner/Python-Package-scanner3.png" alt="批处理方式"></p>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag"># Python</a>
+          
+            <a href="/tags/bat/" rel="tag"># bat</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/10/24/my-first-blog/" rel="next" title="my first blog">
+                <i class="fa fa-chevron-left"></i> my first blog
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/10/Python-package-scanner/" rel="prev" title="Python包查看器">
+                Python包查看器 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
   </div>
 
 
@@ -324,6 +480,15 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80MDQ4Ni8xNzAxMw=="></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -615,6 +780,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
