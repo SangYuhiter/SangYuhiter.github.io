@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[python-docx]]></title>
+    <url>%2F2018%2F12%2F18%2Fpython-docx%2F</url>
+    <content type="text"><![CDATA[hljs.initHighlightingOnLoad();使用python-docx包可以有效处理docx文档，docx文档的实质是一个xml文档，可以使用bs4包进行解析，但处理结果不够理想，且比较复杂，使用python-docx包可以直接获取每段文字，还有更多复杂操作，这里记录下简单的读取文档。安装该包可使用命令行pip install python-docx ##python中导入此包，并读取文件即可。 from docx import Document read_doc=Document(r’test.docx’) for p in read_doc.paragraphs: print(p.text) ##整个文档是一个Document对象，其下的paragraphs是每个段落，text属性可以直接获取该段文字。]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>docx</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Python包查看器]]></title>
     <url>%2F2018%2F12%2F10%2FPython-Package-Info%2F</url>
     <content type="text"><![CDATA[#Python中查看包位置的方式 ##1、pip show packagename 使用pip show packagename 的方式可以查看包的具体信息，具体使用如下： ##2、pip uninstall packagename 使用pip uninstall packagename 的方式可以查看该包所有位置信息，但需要输入n,因为我们不是真的要卸载此包，具体使用如下： ###第二种方式可以查询到所有信息，但操作起来比较麻烦，可以使用以下批处理文件，能够有效查询信息： @echo off title Python package path scanner By SangYu set /p Package=输入包名： echo 正在查询包%Package% echo n | pip uninstall %Package% | findstr “\“ echo 查询完成，按任意键退出 pause&gt;NUL其中，管道命令的作用是：将n作为输入传给pip uninstall packagename，它的返回结果作为输入传给查询命令，其中”\“为右划线的转义字符，从右往左理解即可。使用如下，复制该段代码，保存到文档中，并修改后缀名为.bat，然后点击即可使用。]]></content>
