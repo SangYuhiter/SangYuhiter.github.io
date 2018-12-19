@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[clear_mysql_table_autokey]]></title>
+    <url>%2F2018%2F12%2F19%2Fclear-mysql-table-autokey%2F</url>
+    <content type="text"><![CDATA[##1、清除MySQL表的三个命令 ###drop、truncate、delete ####drop table_name–清除整张表 ####truncate table_name–清除表中数据、并使自增主键初始化 ####delete from table_name where …–清除表中的某些数据 ##2、清除表后使表中自增主键重新计数的第二种方法123delete from table_name;alter table table_name auto_increment=1; 修改自增主键计数起点]]></content>
+      <categories>
+        <category>Mysql</category>
+      </categories>
+      <tags>
+        <tag>Mysql</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[python-docx]]></title>
     <url>%2F2018%2F12%2F18%2Fpython-docx%2F</url>
     <content type="text"><![CDATA[hljs.initHighlightingOnLoad();使用python-docx包可以有效处理docx文档，docx文档的实质是一个xml文档，可以使用bs4包进行解析，但处理结果不够理想，且比较复杂，使用python-docx包可以直接获取每段文字，还有更多复杂操作，这里记录下简单的读取文档。安装该包可使用命令行pip install python-docx ##python中导入此包，并读取文件即可。 from docx import Document read_doc=Document(r’test.docx’) for p in read_doc.paragraphs: print(p.text) ##整个文档是一个Document对象，其下的paragraphs是每个段落，text属性可以直接获取该段文字。]]></content>
