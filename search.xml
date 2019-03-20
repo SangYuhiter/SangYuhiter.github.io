@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[QT_QTextEdit_content_get]]></title>
+    <url>%2F2019%2F03%2F20%2FQT-QTextEdit-content%2F</url>
+    <content type="text"><![CDATA[##PyQT中获取QTextEdit的文本内容 ###QTextEdit控件与其他文本控件有所不同，如QLineEdit有text()函数获取其内容，QTextEdit使用toPlainText()获取其中的文本。12input_text_edit = QTextEdit()input_content = input_text_edit.toPlainText() ###PyQT中toPlainText()的函数原型如下：123def toPlainText(self): # real signature unknown; restored from __doc__ """ toPlainText(self) -&gt; str """ return ""]]></content>
+      <tags>
+        <tag>PyQT</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[clear_mysql_table_autokey]]></title>
     <url>%2F2018%2F12%2F19%2Fclear-mysql-table-autokey%2F</url>
     <content type="text"><![CDATA[##1、清除MySQL表的三个命令 ###drop、truncate、delete ####drop table_name–清除整张表 ####truncate table_name–清除表中数据、并使自增主键初始化 ####delete from table_name where …–清除表中的某些数据 ##2、清除表后使表中自增主键重新计数的第二种方法123delete from table_name;alter table table_name auto_increment=1; 修改自增主键计数起点]]></content>
