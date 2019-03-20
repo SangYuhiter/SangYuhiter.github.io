@@ -366,7 +366,7 @@
       
         
           
-            <h2 id="HEXO-报错记录"><a href="#HEXO-报错记录" class="headerlink" title="HEXO 报错记录"></a><center>HEXO 报错记录<center></center></center></h2><p>###1、<figure class="highlight plain"><figcaption><span>g```报错</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">####（1）、</span><br><span class="line">```cmd</span><br><span class="line">ERROR Process failed: _posts/QT-QTextEdit-content.md</span><br><span class="line">YAMLException: can not read a block mapping entry; a multiline key may not be an implicit key at line 4, column 1:</span><br></pre></td></tr></table></figure></p>
+            <h2 id="HEXO-报错记录"><a href="#HEXO-报错记录" class="headerlink" title="HEXO 报错记录"></a><center>HEXO 报错记录<center></center></center></h2><p>###1、hexo g 报错<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ERROR Process failed: _posts/QT-QTextEdit-content.md</span><br><span class="line">YAMLException: can not read a block mapping entry; a multiline key may not be an implicit key at line 4, column 1:</span><br></pre></td></tr></table></figure></p>
 <p>#####报错原因：YAML语法错误，一般是_config.yml或自己写的md文件中出现了语法错误，属性设置的冒号后必须加上空格，以上错误说明_posts/QT-QTextEdit-content.md的第四行出现错误，即tags的部分，像title、date、tags这些冒号后一定要加一个空格。</p>
 
           
