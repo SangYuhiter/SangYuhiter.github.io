@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Python-int-trans-string]]></title>
+    <url>%2F2019%2F03%2F20%2FPython-int-trans-string%2F</url>
+    <content type="text"><![CDATA[## Python 中int与string的相互转换 ###1、int–&gt;string ####(1)、int转化为10进制string ####str(18) ####(2)、int转化为16进制string ####hex(18) ###2、string–&gt;int ####(1)、10进制string转化为int ####int(‘12’) ####(2)、16进制string转化为int ####int(‘12’,16) ####实际上可以支持其他进制，修改后一个参数即可]]></content>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Hexo-Error]]></title>
     <url>%2F2019%2F03%2F20%2FHexo-Error%2F</url>
     <content type="text"><![CDATA[HEXO 报错记录###1、hexo g 报错12ERROR Process failed: _posts/QT-QTextEdit-content.mdYAMLException: can not read a block mapping entry; a multiline key may not be an implicit key at line 4, column 1: #####报错原因：YAML语法错误，一般是_config.yml或自己写的md文件中出现了语法错误，属性设置的冒号后必须加上空格，以上错误说明_posts/QT-QTextEdit-content.md的第四行出现错误，即tags的部分，像title、date、tags这些冒号后一定要加一个空格。]]></content>
