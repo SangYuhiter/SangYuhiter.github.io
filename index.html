@@ -336,6 +336,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/MySQL/" itemprop="url" rel="index">
+                    <span itemprop="name">MySQL</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -365,17 +387,14 @@
 
       
         
-          
-            <h2 id="MySQL查询表头信息"><a href="#MySQL查询表头信息" class="headerlink" title="MySQL查询表头信息"></a><strong><center>MySQL查询表头信息<center></center></center></strong></h2><p>###1、命令行下（只显示）</p>
-<p>####（1）、<figure class="highlight plain"><figcaption><span>table_name;```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">####（2）、```describe table_name;</span><br></pre></td></tr></table></figure></p>
-<p>####（3）、<figure class="highlight plain"><figcaption><span>columns from table_name;```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">####（4）、```show table status like &apos;%table_name%&apos;;</span><br></pre></td></tr></table></figure></p>
-<p>####（5）、<figure class="highlight plain"><figcaption><span>create table table_name;```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">**以上几条语句的查询结果均相同，将显示表结构，字段类型，是否是主键等信息,第五条将显示建立该表时的建表语句**</span><br><span class="line"></span><br><span class="line">####（6）、```select * from information_schema.columns where table_schema = &apos;db_name&apos; and table_name = &apos;table_name&apos; ;</span><br></pre></td></tr></table></figure></p>
-<p>借用MySQL自身的information_schema数据库，可以选择性的输出相应表的列名（column_name)注释（column_comment）等，可以先全选出来再看自己需要的字段。</p>
-<p>###2、python mysql.connector</p>
-<p>####使用cursor的description属性可以返回对应的表头，下面的程序就是当查询完成后，将数据库键值进行对应的返回结果<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> mysql.connector</span><br><span class="line"></span><br><span class="line"><span class="comment"># 数据库连接(已知数据库名)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">connect_mysql_with_db</span><span class="params">(db_name: str)</span>-&gt;mysql.connector.connect:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    数据库连接(已知数据库名)</span></span><br><span class="line"><span class="string">    :param db_name: 数据库名</span></span><br><span class="line"><span class="string">    :return: 数据库连接</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    mydb = mysql.connector.connect(</span><br><span class="line">        host=<span class="string">"localhost"</span>,</span><br><span class="line">        user=<span class="string">"root"</span>,</span><br><span class="line">        passwd=<span class="string">"123456"</span>,</span><br><span class="line">        database=db_name</span><br><span class="line">    )</span><br><span class="line">    <span class="keyword">return</span> mydb</span><br><span class="line"><span class="comment"># mysql 查询语句,返回查询结果</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">mysql_query_sentence</span><span class="params">(mysql_string: str)</span>-&gt;list:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    mysql 查询语句,返回查询结果,记录键值列表</span></span><br><span class="line"><span class="string">    :param mysql_string: MySQL查询语句</span></span><br><span class="line"><span class="string">    :return: 记录键值列表</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    dbname = <span class="string">"university_admission"</span></span><br><span class="line">    mydb = connect_mysql_with_db(dbname)</span><br><span class="line">    mycursor = mydb.cursor()</span><br><span class="line">    mycursor.execute(mysql_string)</span><br><span class="line">    des = mycursor.description</span><br><span class="line">    column_name = [column[<span class="number">0</span>] <span class="keyword">for</span> column <span class="keyword">in</span> des]</span><br><span class="line">    tempresult = mycursor.fetchall()</span><br><span class="line">    myresult = []</span><br><span class="line">    <span class="keyword">for</span> record <span class="keyword">in</span> tempresult:</span><br><span class="line">        record_dict = &#123;&#125;</span><br><span class="line">        <span class="keyword">for</span> column, word <span class="keyword">in</span> zip(column_name, record):</span><br><span class="line">            record_dict[column] = word</span><br><span class="line">        myresult.append(record_dict)</span><br><span class="line">    <span class="keyword">return</span> myresult</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    test_myresult = mysql_query_sentence(<span class="string">"select * from admission_plan where id&lt;5;"</span>)</span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> test_myresult:</span><br><span class="line">        print(item)</span><br></pre></td></tr></table></figure></p>
-<p>测试返回结果如下：<br><img src="/2019/03/21/MySQL-query-table-head/test1.jpg" alt="数据库查询"><br>得到键值对的数据</p>
-
-          
+          多种方式查询mysql表头信息
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/03/21/MySQL-query-table-head/">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1542,7 +1561,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
