@@ -90,7 +90,7 @@
 <meta property="og:image" content="https://sangyuhiter.github.io/2018/12/10/Python-Package-Info/Python-package-Info/Python-Package-scanner1.png">
 <meta property="og:image" content="https://sangyuhiter.github.io/2018/12/10/Python-Package-Info/Python-package-Info/Python-Package-scanner2.png">
 <meta property="og:image" content="https://sangyuhiter.github.io/2018/12/10/Python-Package-Info/Python-package-Info/Python-Package-scanner3.png">
-<meta property="og:updated_time" content="2019-03-22T12:52:05.306Z">
+<meta property="og:updated_time" content="2019-03-22T13:24:15.343Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python包查看器">
 <meta name="twitter:description" content="介绍如何查看Python包位置">
@@ -402,14 +402,7 @@
 </code></pre><p><img src="/2018/12/10/Python-Package-Info/Python-package-Info/Python-Package-scanner1.png" alt="pip show 方式"></p>
 <h2 id="2、pip-uninstall-packagename"><a href="#2、pip-uninstall-packagename" class="headerlink" title="2、pip uninstall packagename"></a>2、pip uninstall packagename</h2><pre><code>使用pip uninstall packagename 的方式可以查看该包所有位置信息，但需要输入n,因为我们不是真的要卸载此包，具体使用如下：
 </code></pre><p><img src="/2018/12/10/Python-Package-Info/Python-package-Info/Python-Package-scanner2.png" alt="pip uninstall 方式"></p>
-<h3 id="第二种方式可以查询到所有信息，但操作起来比较麻烦，可以使用以下批处理文件，能够有效查询信息："><a href="#第二种方式可以查询到所有信息，但操作起来比较麻烦，可以使用以下批处理文件，能够有效查询信息：" class="headerlink" title="第二种方式可以查询到所有信息，但操作起来比较麻烦，可以使用以下批处理文件，能够有效查询信息："></a>第二种方式可以查询到所有信息，但操作起来比较麻烦，可以使用以下批处理文件，能够有效查询信息：</h3><pre><code>@echo off
-title Python package path scanner By SangYu
-set /p Package=输入包名：
-echo 正在查询包%Package%
-echo n | pip uninstall %Package% | findstr &quot;\\&quot;
-echo 查询完成，按任意键退出
-pause&gt;NUL
-</code></pre><p>其中，管道命令的作用是：将n作为输入传给pip uninstall packagename，它的返回结果作为输入传给查询命令，其中”\“为右划线的转义字符，从右往左理解即可。使用如下，复制该段代码，保存到文档中，并修改后缀名为.bat，然后点击即可使用。<br><img src="/2018/12/10/Python-Package-Info/Python-package-Info/Python-Package-scanner3.png" alt="批处理方式"></p>
+<p><a id="more"></a>### 第二种方式可以查询到所有信息，但操作起来比较麻烦，可以使用以下批处理文件，能够有效查询信息：<br>    @echo off<br>    title Python package path scanner By SangYu<br>    set /p Package=输入包名：<br>    echo 正在查询包%Package%<br>    echo n | pip uninstall %Package% | findstr “\“<br>    echo 查询完成，按任意键退出<br>    pause&gt;NUL<br>其中，管道命令的作用是：将n作为输入传给pip uninstall packagename，它的返回结果作为输入传给查询命令，其中”\“为右划线的转义字符，从右往左理解即可。使用如下，复制该段代码，保存到文档中，并修改后缀名为.bat，然后点击即可使用。<br><img src="/2018/12/10/Python-Package-Info/Python-package-Info/Python-Package-scanner3.png" alt="批处理方式"></p>
 
       
     </div>
@@ -615,7 +608,7 @@ pause&gt;NUL
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Python中查看包位置的方式"><span class="nav-number">1.</span> <span class="nav-text">Python中查看包位置的方式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、pip-show-packagename"><span class="nav-number">1.1.</span> <span class="nav-text">1、pip show packagename</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、pip-uninstall-packagename"><span class="nav-number">1.2.</span> <span class="nav-text">2、pip uninstall packagename</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第二种方式可以查询到所有信息，但操作起来比较麻烦，可以使用以下批处理文件，能够有效查询信息："><span class="nav-number">1.2.1.</span> <span class="nav-text">第二种方式可以查询到所有信息，但操作起来比较麻烦，可以使用以下批处理文件，能够有效查询信息：</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Python中查看包位置的方式"><span class="nav-number">1.</span> <span class="nav-text">Python中查看包位置的方式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、pip-show-packagename"><span class="nav-number">1.1.</span> <span class="nav-text">1、pip show packagename</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、pip-uninstall-packagename"><span class="nav-number">1.2.</span> <span class="nav-text">2、pip uninstall packagename</span></a></li></ol></li></ol></div>
             
 
           </div>
