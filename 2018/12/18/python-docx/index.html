@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="莫道桑榆晚">
 <meta property="og:description" content="关于python-docx的使用，用python获取docx文档内容">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-12-18T15:56:26.075Z">
+<meta property="og:updated_time" content="2019-03-22T12:50:34.695Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python-docx">
 <meta name="twitter:description" content="关于python-docx的使用，用python获取docx文档内容">
@@ -397,9 +397,11 @@
         <p><link href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet">  </p>
 <p><script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>  </p>
 <p><script>hljs.initHighlightingOnLoad();</script><br>使用python-docx包可以有效处理docx文档，docx文档的实质是一个xml文档，可以使用bs4包进行解析，但处理结果不够理想，且比较复杂，使用python-docx包可以直接获取每段文字，还有更多复杂操作，这里记录下简单的读取文档。安装该包可使用命令行<code>pip install python-docx</code></p>
-<p>##python中导入此包，并读取文件即可。<br>    from docx import Document<br>    read_doc=Document(r’test.docx’)<br>    for p in read_doc.paragraphs:<br>        print(p.text)</p>
-<p>##整个文档是一个Document对象，其下的paragraphs是每个段落，text属性可以直接获取该段文字。</p>
-
+<h2 id="python中导入此包，并读取文件即可。"><a href="#python中导入此包，并读取文件即可。" class="headerlink" title="python中导入此包，并读取文件即可。"></a>python中导入此包，并读取文件即可。</h2><pre><code>from docx import Document
+read_doc=Document(r&apos;test.docx&apos;)
+for p in read_doc.paragraphs:
+    print(p.text)
+</code></pre><h2 id="整个文档是一个Document对象，其下的paragraphs是每个段落，text属性可以直接获取该段文字。"><a href="#整个文档是一个Document对象，其下的paragraphs是每个段落，text属性可以直接获取该段文字。" class="headerlink" title="整个文档是一个Document对象，其下的paragraphs是每个段落，text属性可以直接获取该段文字。"></a>整个文档是一个Document对象，其下的paragraphs是每个段落，text属性可以直接获取该段文字。</h2>
       
     </div>
     
@@ -506,8 +508,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -524,7 +535,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -535,7 +546,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -585,6 +596,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#python中导入此包，并读取文件即可。"><span class="nav-number">1.</span> <span class="nav-text">python中导入此包，并读取文件即可。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#整个文档是一个Document对象，其下的paragraphs是每个段落，text属性可以直接获取该段文字。"><span class="nav-number">2.</span> <span class="nav-text">整个文档是一个Document对象，其下的paragraphs是每个段落，text属性可以直接获取该段文字。</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

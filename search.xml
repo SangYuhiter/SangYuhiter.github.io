@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Pycharm-head-comment]]></title>
+    <url>%2F2019%2F03%2F22%2FPycharm-head-comment%2F</url>
+    <content type="text"><![CDATA[Pycharm文件头注释自动生成pycharm中可以设置文件模板，这样在新生成一个.py文件时可以在文件头部分生成许多有用的注释信息，如默认编码方式，默认python执行路径，文件名，作者名，建立文件的时间，文件的内容描述字段等。设置方法如下：File-&gt;Settings-&gt;Editor-&gt;File and Code Templates,选择Python Scipts,在右边的代码框中键入以下代码(可根据自己的需求添加字段)：1234567# -*- coding: utf-8 -*-"""@File : $&#123;NAME&#125;.py@Author: SangYu@Date : $&#123;DATE&#125; $&#123;TIME&#125;@Desc : """ 之后每次新建.py文件都会生成这样的文件头，供开发时进行程序说明。]]></content>
+      <categories>
+        <category>Pycharm</category>
+      </categories>
+      <tags>
+        <tag>Pycharm</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[MySQL_query_table_head]]></title>
     <url>%2F2019%2F03%2F21%2FMySQL-query-table-head%2F</url>
-    <content type="text"><![CDATA[MySQL查询表头信息###1、命令行下（只显示） ####（1）、table_name;```12####（2）、```describe table_name; ####（3）、columns from table_name;```12####（4）、```show table status like &apos;%table_name%&apos;; ####（5）、create table table_name;```123**以上几条语句的查询结果均相同，将显示表结构，字段类型，是否是主键等信息,第五条将显示建立该表时的建表语句**&lt;!--more--&gt;####（6）、```select * from information_schema.columns where table_schema = &apos;db_name&apos; and table_name = &apos;table_name&apos; ; 借用MySQL自身的information_schema数据库，可以选择性的输出相应表的列名（column_name)注释（column_comment）等，可以先全选出来再看自己需要的字段。 ###2、python mysql.connector ####使用cursor的description属性可以返回对应的表头，下面的程序就是当查询完成后，将数据库键值进行对应的返回结果123456789101112131415161718192021222324252627282930313233343536373839404142import mysql.connector# 数据库连接(已知数据库名)def connect_mysql_with_db(db_name: str)-&gt;mysql.connector.connect: """ 数据库连接(已知数据库名) :param db_name: 数据库名 :return: 数据库连接 """ mydb = mysql.connector.connect( host="localhost", user="root", passwd="123456", database=db_name ) return mydb# mysql 查询语句,返回查询结果def mysql_query_sentence(mysql_string: str)-&gt;list: """ mysql 查询语句,返回查询结果,记录键值列表 :param mysql_string: MySQL查询语句 :return: 记录键值列表 """ dbname = "university_admission" mydb = connect_mysql_with_db(dbname) mycursor = mydb.cursor() mycursor.execute(mysql_string) des = mycursor.description column_name = [column[0] for column in des] tempresult = mycursor.fetchall() myresult = [] for record in tempresult: record_dict = &#123;&#125; for column, word in zip(column_name, record): record_dict[column] = word myresult.append(record_dict) return myresultif __name__ == "__main__": test_myresult = mysql_query_sentence("select * from admission_plan where id&lt;5;") for item in test_myresult: print(item) 测试返回结果如下：得到键值对的数据]]></content>
+    <content type="text"><![CDATA[MySQL查询表头信息1、命令行下（只显示）####（1）、table_name;```12####（2）、```describe table_name; ####（3）、columns from table_name;```12####（4）、```show table status like &apos;%table_name%&apos;; ####（5）、create table table_name;```123**以上几条语句的查询结果均相同，将显示表结构，字段类型，是否是主键等信息,第五条将显示建立该表时的建表语句**&lt;!--more--&gt;####（6）、```select * from information_schema.columns where table_schema = &apos;db_name&apos; and table_name = &apos;table_name&apos; ; 借用MySQL自身的information_schema数据库，可以选择性的输出相应表的列名（column_name)注释（column_comment）等，可以先全选出来再看自己需要的字段。 2、python mysql.connector使用cursor的description属性可以返回对应的表头，下面的程序就是当查询完成后，将数据库键值进行对应的返回结果123456789101112131415161718192021222324252627282930313233343536373839404142import mysql.connector# 数据库连接(已知数据库名)def connect_mysql_with_db(db_name: str)-&gt;mysql.connector.connect: """ 数据库连接(已知数据库名) :param db_name: 数据库名 :return: 数据库连接 """ mydb = mysql.connector.connect( host="localhost", user="root", passwd="123456", database=db_name ) return mydb# mysql 查询语句,返回查询结果def mysql_query_sentence(mysql_string: str)-&gt;list: """ mysql 查询语句,返回查询结果,记录键值列表 :param mysql_string: MySQL查询语句 :return: 记录键值列表 """ dbname = "university_admission" mydb = connect_mysql_with_db(dbname) mycursor = mydb.cursor() mycursor.execute(mysql_string) des = mycursor.description column_name = [column[0] for column in des] tempresult = mycursor.fetchall() myresult = [] for record in tempresult: record_dict = &#123;&#125; for column, word in zip(column_name, record): record_dict[column] = word myresult.append(record_dict) return myresultif __name__ == "__main__": test_myresult = mysql_query_sentence("select * from admission_plan where id&lt;5;") for item in test_myresult: print(item) 测试返回结果如下：得到键值对的数据]]></content>
       <categories>
         <category>MySQL</category>
       </categories>
@@ -14,7 +25,10 @@
   <entry>
     <title><![CDATA[Python-int-trans-string]]></title>
     <url>%2F2019%2F03%2F20%2FPython-int-trans-string%2F</url>
-    <content type="text"><![CDATA[## Python 中int与string的相互转换 ###1、int–&gt;string ####(1)、int转化为10进制string ####str(18) ####(2)、int转化为16进制string ####hex(18) ###2、string–&gt;int ####(1)、10进制string转化为int ####int(‘12’) ####(2)、16进制string转化为int ####int(‘12’,16) ####实际上可以支持其他进制，修改后一个参数即可]]></content>
+    <content type="text"><![CDATA[Python 中int与string的相互转换 1、int–&gt;string(1)、int转化为10进制stringstr(18)(2)、int转化为16进制stringhex(18)2、string–&gt;int(1)、10进制string转化为intint(‘12’)(2)、16进制string转化为intint(‘12’,16)实际上可以支持其他进制，修改后一个参数即可]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
       <tags>
         <tag>Python</tag>
       </tags>
@@ -22,7 +36,10 @@
   <entry>
     <title><![CDATA[Hexo-Error]]></title>
     <url>%2F2019%2F03%2F20%2FHexo-Error%2F</url>
-    <content type="text"><![CDATA[HEXO 报错记录###1、hexo g 报错12ERROR Process failed: _posts/QT-QTextEdit-content.mdYAMLException: can not read a block mapping entry; a multiline key may not be an implicit key at line 4, column 1: #####报错原因：YAML语法错误，一般是_config.yml或自己写的md文件中出现了语法错误，属性设置的冒号后必须加上空格，以上错误说明_posts/QT-QTextEdit-content.md的第四行出现错误，即tags的部分，像title、date、tags这些冒号后一定要加一个空格。]]></content>
+    <content type="text"><![CDATA[HEXO 报错记录1、hexo g 报错12ERROR Process failed: _posts/QT-QTextEdit-content.mdYAMLException: can not read a block mapping entry; a multiline key may not be an implicit key at line 4, column 1: 报错原因：YAML语法错误，一般是_config.yml或自己写的md文件中出现了语法错误，属性设置的冒号后必须加上空格，以上错误说明_posts/QT-QTextEdit-content.md的第四行出现错误，即tags的部分，像title、date、tags这些冒号后一定要加一个空格。]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
       <tags>
         <tag>Hexo</tag>
       </tags>
@@ -30,7 +47,10 @@
   <entry>
     <title><![CDATA[QT_QTextEdit_content_get]]></title>
     <url>%2F2019%2F03%2F20%2FQT-QTextEdit-content%2F</url>
-    <content type="text"><![CDATA[##PyQT中获取QTextEdit的文本内容 ###QTextEdit控件与其他文本控件有所不同，如QLineEdit有text()函数获取其内容，QTextEdit使用toPlainText()获取其中的文本。12input_text_edit = QTextEdit()input_content = input_text_edit.toPlainText() ###PyQT中toPlainText()的函数原型如下：123def toPlainText(self): # real signature unknown; restored from __doc__ """ toPlainText(self) -&gt; str """ return ""]]></content>
+    <content type="text"><![CDATA[PyQT中获取QTextEdit的文本内容QTextEdit控件与其他文本控件有所不同，如QLineEdit有text()函数获取其内容，QTextEdit使用toPlainText()获取其中的文本。12input_text_edit = QTextEdit()input_content = input_text_edit.toPlainText() PyQT中toPlainText()的函数原型如下：123def toPlainText(self): # real signature unknown; restored from __doc__ """ toPlainText(self) -&gt; str """ return ""]]></content>
+      <categories>
+        <category>PyQT</category>
+      </categories>
       <tags>
         <tag>PyQT</tag>
       </tags>
@@ -38,18 +58,18 @@
   <entry>
     <title><![CDATA[clear_mysql_table_autokey]]></title>
     <url>%2F2018%2F12%2F19%2Fclear-mysql-table-autokey%2F</url>
-    <content type="text"><![CDATA[##1、清除MySQL表的三个命令 ###drop、truncate、delete ####drop table_name–清除整张表 ####truncate table_name–清除表中数据、并使自增主键初始化 ####delete from table_name where …–清除表中的某些数据 ##2、清除表后使表中自增主键重新计数的第二种方法123delete from table_name;alter table table_name auto_increment=1; 修改自增主键计数起点]]></content>
+    <content type="text"><![CDATA[1、清除MySQL表的三个命令drop、truncate、deletedrop table_name–清除整张表truncate table_name–清除表中数据、并使自增主键初始化delete from table_name where …–清除表中的某些数据2、清除表后使表中自增主键重新计数的第二种方法123delete from table_name;alter table table_name auto_increment=1; 修改自增主键计数起点]]></content>
       <categories>
-        <category>Mysql</category>
+        <category>MySQL</category>
       </categories>
       <tags>
-        <tag>Mysql</tag>
+        <tag>MySQL</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[python-docx]]></title>
     <url>%2F2018%2F12%2F18%2Fpython-docx%2F</url>
-    <content type="text"><![CDATA[hljs.initHighlightingOnLoad();使用python-docx包可以有效处理docx文档，docx文档的实质是一个xml文档，可以使用bs4包进行解析，但处理结果不够理想，且比较复杂，使用python-docx包可以直接获取每段文字，还有更多复杂操作，这里记录下简单的读取文档。安装该包可使用命令行pip install python-docx ##python中导入此包，并读取文件即可。 from docx import Document read_doc=Document(r’test.docx’) for p in read_doc.paragraphs: print(p.text) ##整个文档是一个Document对象，其下的paragraphs是每个段落，text属性可以直接获取该段文字。]]></content>
+    <content type="text"><![CDATA[hljs.initHighlightingOnLoad();使用python-docx包可以有效处理docx文档，docx文档的实质是一个xml文档，可以使用bs4包进行解析，但处理结果不够理想，且比较复杂，使用python-docx包可以直接获取每段文字，还有更多复杂操作，这里记录下简单的读取文档。安装该包可使用命令行pip install python-docx python中导入此包，并读取文件即可。from docx import Document read_doc=Document(r&apos;test.docx&apos;) for p in read_doc.paragraphs: print(p.text) 整个文档是一个Document对象，其下的paragraphs是每个段落，text属性可以直接获取该段文字。]]></content>
       <categories>
         <category>Python</category>
       </categories>
@@ -61,19 +81,19 @@
   <entry>
     <title><![CDATA[Python包查看器]]></title>
     <url>%2F2018%2F12%2F10%2FPython-Package-Info%2F</url>
-    <content type="text"><![CDATA[#Python中查看包位置的方式 ##1、pip show packagename 使用pip show packagename 的方式可以查看包的具体信息，具体使用如下： ##2、pip uninstall packagename 使用pip uninstall packagename 的方式可以查看该包所有位置信息，但需要输入n,因为我们不是真的要卸载此包，具体使用如下： ###第二种方式可以查询到所有信息，但操作起来比较麻烦，可以使用以下批处理文件，能够有效查询信息： @echo off title Python package path scanner By SangYu set /p Package=输入包名： echo 正在查询包%Package% echo n | pip uninstall %Package% | findstr “\“ echo 查询完成，按任意键退出 pause&gt;NUL其中，管道命令的作用是：将n作为输入传给pip uninstall packagename，它的返回结果作为输入传给查询命令，其中”\“为右划线的转义字符，从右往左理解即可。使用如下，复制该段代码，保存到文档中，并修改后缀名为.bat，然后点击即可使用。]]></content>
+    <content type="text"><![CDATA[Python中查看包位置的方式1、pip show packagename使用pip show packagename 的方式可以查看包的具体信息，具体使用如下： 2、pip uninstall packagename使用pip uninstall packagename 的方式可以查看该包所有位置信息，但需要输入n,因为我们不是真的要卸载此包，具体使用如下： 第二种方式可以查询到所有信息，但操作起来比较麻烦，可以使用以下批处理文件，能够有效查询信息：@echo off title Python package path scanner By SangYu set /p Package=输入包名： echo 正在查询包%Package% echo n | pip uninstall %Package% | findstr &quot;\\&quot; echo 查询完成，按任意键退出 pause&gt;NUL 其中，管道命令的作用是：将n作为输入传给pip uninstall packagename，它的返回结果作为输入传给查询命令，其中”\“为右划线的转义字符，从右往左理解即可。使用如下，复制该段代码，保存到文档中，并修改后缀名为.bat，然后点击即可使用。]]></content>
       <categories>
         <category>Python</category>
       </categories>
       <tags>
         <tag>Python</tag>
-        <tag>bat</tag>
+        <tag>Bat</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[my first blog]]></title>
     <url>%2F2018%2F10%2F24%2Fmy-first-blog%2F</url>
-    <content type="text"><![CDATA[#文章正文如下：Markdown书写 ##次标题 ###三级标题readmore的使用东隅已逝桑榆非晚！]]></content>
+    <content type="text"><![CDATA[文章正文如下：Markdown书写次标题三级标题readmore的使用东隅已逝桑榆非晚！]]></content>
   </entry>
   <entry>
     <title><![CDATA[Hello World]]></title>
